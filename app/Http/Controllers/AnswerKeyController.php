@@ -52,6 +52,22 @@ class AnswerKeyController extends Controller
         $result=AnswerKey::create($data);
         return response()->json($result);
     }
+    public function update(Request $request)
+    {
+
+        $ansKey=array();
+        for($i=1;$i<=100;$i++){
+            $variab="A".$i;
+            if(isset($request->$variab)) {
+                $ansKey[$variab] = $request->$variab;
+            }
+        }
+
+        $ansKey = json_encode($ansKey);
+        $id=$request->id;
+        $result=AnswerKey::where('id', $id)->update(['answer' => $ansKey]);
+        return response()->json($result);
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -73,7 +89,7 @@ class AnswerKeyController extends Controller
     public function show(Request $request)
     {
         return $this->answerKeyRepository->show($request);
-        //// json_decode($result);
+
     }
  public function showImg(Request $request)
     {
@@ -81,39 +97,5 @@ class AnswerKeyController extends Controller
         $result['ansKeyId']=$data->id;
         $result['imgPath'] = $this->bubbleSheetImgRepository->show($data->id);
         return $result;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }

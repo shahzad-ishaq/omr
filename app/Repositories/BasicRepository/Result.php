@@ -3,13 +3,11 @@
 namespace App\Repositories\BasicRepository;
 
 use Illuminate\Database\Eloquent\Model;
-use JasonGuru\LaravelMakeRepository\Repository\BaseRepository;
-//use Your Model
 
-/**
- * Class Result.
- */
+
 class Result extends Model
 {
+    protected $table ='results';
+    protected $fillable = ['roll_no','total_mark','attempt_question','correct_question','class_id','groups_id','session_id','answerKey_id','created_at','updated_at'];
 
 }

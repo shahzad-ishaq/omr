@@ -81,7 +81,7 @@
                             <div class="col-lg-4 col-md-6">
                                 <div class="mb-3">
                                 <div class="fallback">
-                                    <input type="file" name="files[]" id="files" multiple="multiple" style="display: none">
+                                    <input type="file" name="image[]" id="files" multiple="multiple" style="display: none">
                                 </div>
                                 </div></div>
                             <div class="col-lg-4 col-md-6">

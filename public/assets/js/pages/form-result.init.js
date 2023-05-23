@@ -338,12 +338,15 @@ $("#test_id").change(function (e) {
 });
 $("#resultCompile").click(function (e) {
     var ansKeyId = $('#ansKeyId').val();
+    let class_id = $('#class_id').val();
+    let groups_id = $('#class_groups_id').val();
+    let session_id = $('#session_id').val();
     $.ajax({
         url: "compileResult",
         type: 'POST',
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         dataType: 'json',
-        data: {ansKeyId:ansKeyId},
+        data: {ansKeyId:ansKeyId,class_id:class_id,groups_id:groups_id,session_id:session_id},
         success: function (data) {
             console.log(data);
         }

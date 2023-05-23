@@ -27,5 +27,13 @@ class AnswerKeyRepository
             ->first();
 
     }
+    public function showAnswer($ansKeyId){
+
+        return DB::table('answerkey')
+            ->select('answerkey.id','answerkey.answer')
+            ->where('answerkey.id', '=', $ansKeyId)
+            ->first();
+
+    }
 
 }

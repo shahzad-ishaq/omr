@@ -30,6 +30,7 @@ Route::post('/getClassGroup', [ClassGroupController::class, 'show']);
 Route::post('/getSubject', [SubjectController::class, 'show']);
 Route::post('/getTest', [TestTypeController::class, 'show']);
 Route::post('/addAnswerKey', [AnswerKeyController::class, 'create']);
+Route::post('/updateAnswerKey', [AnswerKeyController::class, 'update']);
 Route::post('/getAnswer', [AnswerKeyController::class, 'show']);
 Route::post('/getAnswerKeyImg', [AnswerKeyController::class, 'showImg']);
 Route::post('/uploadImg', [ResultController::class, 'storeImg']);
